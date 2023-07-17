@@ -19,6 +19,10 @@ Route::get('/',[PageHomeController::class, 'index'])->name('anasayfa');
 
 Route::prefix('/urunler')->group(function (){
     Route::get('/',[PageController::class,'products'])->name('products');
+    Route::get('/erkek-giyim',[PageController::class,'products'])->name('menproducts');
+    Route::get('/kadin-giyim',[PageController::class,'products'])->name('womenproducts');
+    Route::get('/cocuk-giyim',[PageController::class,'products'])->name('childrenproducts');
+    Route::get('/indirimdekiurunler',[PageController::class,'discounted_products'])->name('indirimdekiurunler');
     Route::get('/detay',[PageController::class,'detail'])->name('product_detail');
 });
 

@@ -10,6 +10,9 @@ class PageController extends Controller
     public function products(){
         return view('admin.products.products');
     }
+    public function discounted_products(){
+        return view('admin.products.products');
+    }
 
     public function detail(){
         return view('admin.products.product_detail');

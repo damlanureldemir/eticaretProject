@@ -7,11 +7,11 @@
         <div class="container">
             <div class="row align-items-start align-items-md-center justify-content-end">
                 <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
-                    <h1 class="mb-2">Finding Your Perfect Shoes</h1>
+                    <h1 class="mb-2">{{$slider->name}}</h1>
                     <div class="intro-text text-center text-md-left">
-                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla. </p>
+                        <p class="mb-4">{{$slider->content}}</p>
                         <p>
-                            <a href="#" class="btn btn-sm btn-primary">Shop Now</a>
+                            <a href="{{url('/').'/'.$slider->link}}" class="btn btn-sm btn-primary">ÜRÜNLERİMİZ</a>
                         </p>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
-                    <a class="block-2-item" href="#">
+                    <a class="block-2-item" href="{{route('womenproducts')}}">
                         <figure class="image">
                             <img src="images/women.jpg" alt="" class="img-fluid">
                         </figure>
@@ -68,7 +68,7 @@
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-                    <a class="block-2-item" href="#">
+                    <a class="block-2-item" href="{{route('childrenproducts')}}">
                         <figure class="image">
                             <img src="images/children.jpg" alt="" class="img-fluid">
                         </figure>
@@ -79,7 +79,7 @@
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-                    <a class="block-2-item" href="#">
+                    <a class="block-2-item" href="{{route('menproducts')}}">
                         <figure class="image">
                             <img src="images/men.jpg" alt="" class="img-fluid">
                         </figure>
@@ -184,7 +184,7 @@
                     <h2><a href="#">50% less in all items</a></h2>
                     <p class="post-meta mb-4">By <a href="#">Carl Smith</a> <span class="block-8-sep">&bullet;</span> September 3, 2018</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste dolor accusantium facere corporis ipsum animi deleniti fugiat. Ex, veniam?</p>
-                    <p><a href="#" class="btn btn-primary btn-sm">Shop Now</a></p>
+                    <p><a href="route{{'indirimdekiurunler'}}" class="btn btn-primary btn-sm">Shop Now</a></p>
                 </div>
             </div>
         </div>
