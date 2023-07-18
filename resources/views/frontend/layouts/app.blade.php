@@ -36,9 +36,7 @@
                     </div>
 
                     <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
-                        <div class="site-logo">
-                            <a href="index.html" class="js-logo-clone">Shoppers</a>
-                        </div>
+                        <a href="index.html" class="js-logo-clone"><img src="{{asset('images/logo.png') }}" width="150" height="150"></a>
                     </div>
 
                     <div class="col-6 col-md-4 order-3 order-md-3 text-right">
@@ -67,17 +65,11 @@
                     <li class="has-children ">
                         <a href="#">KATEGORİ</a>
                         <ul class="dropdown">
-                            <li><a href="#">Menu One</a></li>
-                            <li><a href="#">Menu Two</a></li>
-                            <li><a href="#">Menu Three</a></li>
-                            <li class="has-children">
-                                <a href="#">Sub Menu</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">Menu One</a></li>
-                                    <li><a href="#">Menu Two</a></li>
-                                    <li><a href="#">Menu Three</a></li>
-                                </ul>
-                            </li>
+                            @if(!empty($categories) && $categories->count()>0)
+                                @foreach($categories as $category)
+                                    <li><a href="#">{{$category->name}}</a></li>
+                                @endforeach
+                            @endif
                         </ul>
                     </li>
                     <li><a href="{{route('products')}}">ÜRÜNLER</a></li>

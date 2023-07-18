@@ -27,8 +27,8 @@
                         <span class="icon-truck"></span>
                     </div>
                     <div class="text">
-                        <h2 class="text-uppercase">Free Shipping</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
+                        <h2 class="text-uppercase">ÜCRETSİZ KARGO</h2>
+                        <p>Ürünlerimizde 250 TL üzeri kargo ücretsiz</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
@@ -36,8 +36,8 @@
                         <span class="icon-refresh2"></span>
                     </div>
                     <div class="text">
-                        <h2 class="text-uppercase">Free Returns</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
+                        <h2 class="text-uppercase">GERİ İADE</h2>
+                        <p>7 gün içerisinde iade</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
@@ -45,8 +45,8 @@
                         <span class="icon-help"></span>
                     </div>
                     <div class="text">
-                        <h2 class="text-uppercase">Customer Support</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
+                        <h2 class="text-uppercase">DESTEK</h2>
+                        <p>7/24 destek</p>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                         </figure>
                         <div class="text">
                             <span class="text-uppercase">Collections</span>
-                            <h3>Women</h3>
+                            <h3>BAYAN</h3>
                         </div>
                     </a>
                 </div>
@@ -74,7 +74,7 @@
                         </figure>
                         <div class="text">
                             <span class="text-uppercase">Collections</span>
-                            <h3>Children</h3>
+                            <h3>ÇOCUK</h3>
                         </div>
                     </a>
                 </div>
@@ -85,7 +85,7 @@
                         </figure>
                         <div class="text">
                             <span class="text-uppercase">Collections</span>
-                            <h3>Men</h3>
+                            <h3>BAY</h3>
                         </div>
                     </a>
                 </div>
@@ -97,7 +97,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-7 site-section-heading text-center pt-4">
-                    <h2>Featured Products</h2>
+                    <h2>YENİ EKLENEN ÜRÜNLERİMİZ</h2>
                 </div>
             </div>
             <div class="row">
@@ -111,7 +111,7 @@
                                 <div class="block-4-text p-4">
                                     <h3><a href="#">Tank Top</a></h3>
                                     <p class="mb-0">Finding perfect t-shirt</p>
-                                    <p class="text-primary font-weight-bold">$50</p>
+                                    <p class="text-primary font-weight-bold">50 tl</p>
                                 </div>
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                                 <div class="block-4-text p-4">
                                     <h3><a href="#">Corater</a></h3>
                                     <p class="mb-0">Finding perfect products</p>
-                                    <p class="text-primary font-weight-bold">$50</p>
+                                    <p class="text-primary font-weight-bold">50 tl</p>
                                 </div>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                                 <div class="block-4-text p-4">
                                     <h3><a href="#">Polo Shirt</a></h3>
                                     <p class="mb-0">Finding perfect products</p>
-                                    <p class="text-primary font-weight-bold">$50</p>
+                                    <p class="text-primary font-weight-bold">50 tl</p>
                                 </div>
                             </div>
                         </div>
@@ -173,7 +173,7 @@
         <div class="container">
             <div class="row justify-content-center  mb-5">
                 <div class="col-md-7 site-section-heading text-center pt-4">
-                    <h2>Big Sale!</h2>
+                    <h2>KAMPANYA!</h2>
                 </div>
             </div>
             <div class="row align-items-center">
@@ -181,10 +181,9 @@
                     <a href="#"><img src="images/blog_1.jpg" alt="Image placeholder" class="img-fluid rounded"></a>
                 </div>
                 <div class="col-md-12 col-lg-5 text-center pl-md-5">
-                    <h2><a href="#">50% less in all items</a></h2>
-                    <p class="post-meta mb-4">By <a href="#">Carl Smith</a> <span class="block-8-sep">&bullet;</span> September 3, 2018</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste dolor accusantium facere corporis ipsum animi deleniti fugiat. Ex, veniam?</p>
-                    <p><a href="route{{'indirimdekiurunler'}}" class="btn btn-primary btn-sm">Shop Now</a></p>
+                    <h2><a href="">Tüm ürünlerimizde %50 indirim</a></h2>
+                    <p>Seçili ürünlerde indirim fırsatlarını kaçırmayın</p>
+                    <p><a href="{{route('indirimdekiurunler')}}" class="btn btn-primary btn-sm">İNDİRİMDEKİ ÜRÜNLER</a></p>
                 </div>
             </div>
         </div>
