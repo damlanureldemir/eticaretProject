@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\SiteSetting;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,6 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             SliderSeeder::class,
             CategorySeeder::class,
+            AboutSeeder::class,
+            SiteSettingSeeder::class,
         ]);
     }
 }

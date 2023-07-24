@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[PageHomeController::class, 'index'])->name('anasayfa');
+Route::get('/',[PageHomeController::class, 'index'])->name('anasayfa')->middleware('siteSetting');
 
-Route::prefix('/urunler')->group(function (){
+Route::prefix('/urunler')->middleware('siteSetting')->group(function (){
     Route::get('/',[PageController::class,'products'])->name('products');
     Route::get('/erkek-giyim',[PageController::class,'products'])->name('menproducts');
     Route::get('/kadin-giyim',[PageController::class,'products'])->name('womenproducts');
@@ -25,8 +25,9 @@ Route::prefix('/urunler')->group(function (){
     Route::get('/indirimdekiurunler',[PageController::class,'discounted_products'])->name('indirimdekiurunler');
     Route::get('/detay',[PageController::class,'detail'])->name('product_detail');
 });
-
-Route::get('/cart',[PageController::class,'cart'])->name('sepet');
-Route::get('/hakkimizda',[PageController::class, 'about'])->name('about');
-Route::get('/iletisim',[PageController::class, 'contact'])->name('contact');
+Route::group(['middleware'=>'siteSetting'],function (){
+    Route::get('/cart',[PageController::class,'cart'])->name('sepet');
+    Route::get('/hakkimizda',[PageController::class, 'about'])->name('about');
+    Route::get('/iletisim',[PageController::class, 'contact'])->name('contact');
+});
 

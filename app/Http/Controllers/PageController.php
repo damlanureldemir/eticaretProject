@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -27,6 +28,7 @@ class PageController extends Controller
     }
 
     public function about(){
-        return view('frontend.pages.about');
+        $about=About::where('id',1)->first();
+        return view('frontend.pages.about',compact('about'));
     }
 }

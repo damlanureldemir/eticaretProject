@@ -67,7 +67,18 @@
                         <ul class="dropdown">
                             @if(!empty($categories) && $categories->count()>0)
                                 @foreach($categories as $category)
-                                    <li><a href="#">{{$category->name}}</a></li>
+                                    @if($category->cat_ust==null)
+                                        <li class="has-children">
+                                            <a href="#">{{$category->name}}</a>
+                                            <ul class="dropdown">
+                                                @foreach($categories as $subCategory)
+                                                    @if($subCategory->cat_ust==$category->id)
+                                                        <li><a href="#">{{$subCategory->name}}</a></li>
+                                                    @endif
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                    @endif
                                 @endforeach
                             @endif
                         </ul>
@@ -89,58 +100,27 @@
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="footer-heading mb-4">Navigations</h3>
+                            <h3 class="footer-heading mb-4">Menü</h3>
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <ul class="list-unstyled">
-                                <li><a href="#">Sell online</a></li>
-                                <li><a href="#">Features</a></li>
-                                <li><a href="#">Shopping cart</a></li>
-                                <li><a href="#">Store builder</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Mobile commerce</a></li>
-                                <li><a href="#">Dropshipping</a></li>
-                                <li><a href="#">Website development</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Point of sale</a></li>
-                                <li><a href="#">Hardware</a></li>
-                                <li><a href="#">Software</a></li>
+                                <li class="active"><a href="{{route('anasayfa')}}">ANA SAYFA</a></li>
+                                <li><a href="{{route('products')}}">ÜRÜNLER</a></li>
+                                <li><a href="{{route('about')}}">HAKKIMIZDA</a></li>
+                                <li><a href="{{route('contact')}}">İLETİŞİM</a></li>
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-                    <h3 class="footer-heading mb-4">Promo</h3>
-                    <a href="#" class="block-6">
-                        <img src="images/hero_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
-                        <h3 class="font-weight-light  mb-0">Finding Your Perfect Shoes</h3>
-                        <p>Promo from  nuary 15 &mdash; 25, 2019</p>
-                    </a>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="block-5 mb-5">
-                        <h3 class="footer-heading mb-4">Contact Info</h3>
-                        <ul class="list-unstyled">
-                            <li class="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
-                            <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
-                            <li class="email">emailaddress@domain.com</li>
-                        </ul>
-                    </div>
+                        <h3 class="footer-heading mb-4">İletişim</h3>
+                        @foreach($settings as $setting)
 
-                    <div class="block-7">
-                        <form action="#" method="post">
-                            <label for="email_subscribe" class="footer-heading">Subscribe</label>
-                            <div class="form-group">
-                                <input type="text" class="form-control py-4" id="email_subscribe" placeholder="Email">
-                                <input type="submit" class="btn btn-sm btn-primary" value="Send">
-                            </div>
-                        </form>
+                        <ul class="list-unstyled">
+                            <li class="address">{{$setting->data}}</li>
+                        </ul>
+                        @endforeach
                     </div>
                 </div>
             </div>
