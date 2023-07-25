@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PageHomeController;
 use Illuminate\Support\Facades\Route;
@@ -29,5 +30,6 @@ Route::group(['middleware'=>'siteSetting'],function (){
     Route::get('/cart',[PageController::class,'cart'])->name('sepet');
     Route::get('/hakkimizda',[PageController::class, 'about'])->name('about');
     Route::get('/iletisim',[PageController::class, 'contact'])->name('contact');
+    Route::post('/iletisim/store',[AjaxController::class, 'contactstore'])->name('contact.store');
 });
 
