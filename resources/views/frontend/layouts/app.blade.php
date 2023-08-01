@@ -66,24 +66,20 @@
                         <a href="#">KATEGORİ</a>
                         <ul class="dropdown">
                             @if(!empty($categories) && $categories->count()>0)
-                                @foreach($categories as $category)
-                                    @if($category->cat_ust==null)
+                                @foreach($categories->where('cat_ust',null) as $category)
                                         <li class="has-children">
-                                            <a href="#">{{$category->name}}</a>
+                                            <a href="{{route($category->slug.'urunler')}}">{{$category->name}}</a>
                                             <ul class="dropdown">
-                                                @foreach($categories as $subCategory)
-                                                    @if($subCategory->cat_ust==$category->id)
-                                                        <li><a href="#">{{$subCategory->name}}</a></li>
-                                                    @endif
+                                                @foreach($category->subcategory as $subCategory)
+                                                        <li><a href="{{route($category->slug.'urunler',$subCategory->slug)}}">{{$subCategory->name}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
-                                    @endif
                                 @endforeach
                             @endif
                         </ul>
                     </li>
-                    <li><a href="{{route('products')}}">ÜRÜNLER</a></li>
+                    <li><a href="{{route('urunler')}}">ÜRÜNLER</a></li>
                     <li>
                         <a href="{{route('about')}}">HAKKIMIZDA</a>
                     </li>
@@ -105,7 +101,7 @@
                         <div class="col-md-6 col-lg-4">
                             <ul class="list-unstyled">
                                 <li class="active"><a href="{{route('anasayfa')}}">ANA SAYFA</a></li>
-                                <li><a href="{{route('products')}}">ÜRÜNLER</a></li>
+                                <li><a href="{{route('urunler')}}">ÜRÜNLER</a></li>
                                 <li><a href="{{route('about')}}">HAKKIMIZDA</a></li>
                                 <li><a href="{{route('contact')}}">İLETİŞİM</a></li>
                             </ul>
@@ -137,7 +133,7 @@
         </div>
     </footer>
 </div>
-
+@yield('js')
 <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
 <script src="{{asset('js/jquery-ui.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>

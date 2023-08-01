@@ -19,12 +19,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[PageHomeController::class, 'index'])->name('anasayfa')->middleware('siteSetting');
 
 Route::prefix('/urunler')->middleware('siteSetting')->group(function (){
-    Route::get('/',[PageController::class,'products'])->name('products');
-    Route::get('/erkek-giyim',[PageController::class,'products'])->name('menproducts');
-    Route::get('/kadin-giyim',[PageController::class,'products'])->name('womenproducts');
-    Route::get('/cocuk-giyim',[PageController::class,'products'])->name('childrenproducts');
+    Route::get('/',[PageController::class,'products'])->name('urunler');
+    Route::get('/erkek/{slug?}',[PageController::class,'products'])->name('erkekurunler');
+    Route::get('/kadin/{slug?}',[PageController::class,'products'])->name('kadinurunler');
+    Route::get('/cocuk/{slug?}',[PageController::class,'products'])->name('cocukurunler');
     Route::get('/indirimdekiurunler',[PageController::class,'discounted_products'])->name('indirimdekiurunler');
-    Route::get('/detay',[PageController::class,'detail'])->name('product_detail');
+    Route::get('/detay/{slug}',[PageController::class,'detail'])->name('product_detail');
+
 });
 Route::group(['middleware'=>'siteSetting'],function (){
     Route::get('/cart',[PageController::class,'cart'])->name('sepet');

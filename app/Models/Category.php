@@ -18,6 +18,12 @@ class Category extends Model
       'cat_ust',
       'status',
     ];
+    public function items(){
+        return $this->hasMany(Product::class,'category_id','id');
+    }
+    public  function subcategory(){
+        return $this->hasMany(Category::class,'cat_ust','id');
+    }
     public function sluggable(): array
     {
         return[

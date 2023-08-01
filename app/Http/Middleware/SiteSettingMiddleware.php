@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Category;
 use App\Models\SiteSetting;
 use Closure;
 use Illuminate\Http\Request;
@@ -21,7 +22,8 @@ class SiteSettingMiddleware
 
 */
         $settings = SiteSetting::get();
-        view()->share(['settings'=>$settings]);
+        $categories=Category::where('status','1')->with('subcategory')->withCount('items')->get();
+        view()->share(['settings'=>$settings,'categories'=>$categories]);
         return $next($request);
     }
 }

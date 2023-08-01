@@ -16,10 +16,10 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $erkek=Category::create([
-            'image'=>null,
+            'image'=>'img/category/men.jpg',
             'thumbnail'=>null,
             'cat_ust'=>null,
-            'name'=>'Erkek',
+            'name'=>'erkek',
             'content'=>'Erkek Giyim',
             'status'=>'1',
         ]);
@@ -40,10 +40,10 @@ class CategorySeeder extends Seeder
             'status'=>'1',
         ]);
         $kadin=Category::create([
-            'image'=>null,
+            'image'=>'img/category/women.jpg',
             'thumbnail'=>null,
             'cat_ust'=>null,
-            'name'=>'Kadın',
+            'name'=>'kadin',
             'content'=>'Erkek Giyim',
             'status'=>'1',
         ]);
@@ -65,7 +65,7 @@ class CategorySeeder extends Seeder
         ]);
 
         $cocuk=Category::create([
-            'image'=>null,
+            'image'=>'img/category/children.jpg',
             'thumbnail'=>null,
             'cat_ust'=>null,
             'name'=>'cocuk',
